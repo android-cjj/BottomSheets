@@ -104,11 +104,17 @@ onStateChanged方法可以监听到状态的改变,总共有5种
   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3TnJEQUF3Y0JVb2c/components_bottomsheets_modal10.png" width="360" height="640" />
  上图你可明显的看到第二幅这种设计师不合适的，空白太多，不美观，对吧！
  
-  <img src=https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3Ym9QLTlfbUR4ekk/components_bottomsheets_modal11.png" width="360" height="640" />
+  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3Ym9QLTlfbUR4ekk/components_bottomsheets_modal11.png" width="360" height="640" />
   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3YmVmTWVhMWtZbFk/components_bottomsheets_modal12.png" width="360" height="640" />
+  如果Bottom Sheets 展开或者上拉覆盖了ActionBar or ToolBar 这种方式也是不合适的.
   
-  如果BottomSheets上拉覆盖了ActionBar or ToolBar 这种方式也是不合适的
+###(3)尺寸的设计
+为了符合Material Design 设计，我们队尺寸有严格的要求，当然，你想随意我也阻止不了
 
+  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3dXNVNEpIZzZQdUU/components_bottomsheets_specs1.png" width="360" height="640" />
+  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3a2JBazEtX3R2Ulk/components_bottomsheets_specs7.png" width="360" height="640" />
+  
+  
 
 
 
