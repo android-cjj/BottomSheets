@@ -4,3 +4,68 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
 
  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3VW9HUDhtTE5XZVk/components_bottomsheets_usage2.png" width="360" height="640" />
  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3dDZKN1lHNG1TekU/components_bottomsheets_usage1.png" width="360" height="640" />
+
+昨天晚上Support Library 23.2包还没能更新，官方视频就已经透露出了，[视频地址](https://youtu.be/7E2lNBM38IE?list=PLWz5rJ2EKKc9e0d55YHgJFHXNZbGHEXJX),从视频看出Support Library 23.2包新增了:
+
+* 1. Support Vector Drawables and Animated Vector Drawables
+* 2. AppCompat DayNight theme
+* 3. Design Support Library: Bottom Sheets
+* 4. Support v4: MediaBrowserServiceCompat
+* 5. Custom Tabs
+
+具体可以上官网博客看看。
+
+这篇文章我给大家说说BottomSheetBehavior的使用及注意的地方
+
+##Usage
+###(1)在布局文件xml中
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    >
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="50dp"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        >
+          <!-- NestedScrollView里设置你的底部表长什么样的-->
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
+
+```
+###(2)在java代码中
+```java
+  @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_ns);
+
+        // The View with the BottomSheetBehavior
+        CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.cl);
+        View bottomSheet = coordinatorLayout.findViewById(R.id.bottom_sheet);
+        final BottomSheetBehavior behavior = BottomSheetBehavior.from(bottomSheet);
+        behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                //这里是bottomSheet 状态的改变，根据slideOffset可以做一些动画
+            }
+
+            @Override
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+                //这里是拖拽中的回调，根据slideOffset可以做一些动画
+            }
+        });
+    }
+```
+
+
