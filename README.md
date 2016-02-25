@@ -89,7 +89,7 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 ![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif)
 ![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs12.gif)
 
-使用就这些了，接下来我们来讲讲改注意的地方，应该说怎样更好的使用它。
+使用就这些了，接下来我们来讲讲该注意的地方，应该说怎样更好的使用它。
 
 ###（1）关闭Bottom Sheets的行为
 可以通过下图的形式，拖拽、点击bottom sheet之外的地方和通过‘x’按钮
