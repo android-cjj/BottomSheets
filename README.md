@@ -1,6 +1,6 @@
 BottomSheets
 =======================
-Android Support Library 23.2里的 Design Support Library新加了一个Bottom Sheets控件，一个底部表，就是我们经常在分享或者地图等app看到的效果
+Android Support Library 23.2里的 Design Support Library新加了一个Bottom Sheets控件，一个底部表，就是我们经常在分享或者地图、音乐等app看到的效果
 
  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3VW9HUDhtTE5XZVk/components_bottomsheets_usage2.png" width="360" height="640" />
  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3dDZKN1lHNG1TekU/components_bottomsheets_usage1.png" width="360" height="640" />
@@ -88,6 +88,17 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 
 ![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif)
 ![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs12.gif)
+
+使用就这些了，接下来我们来讲讲改注意的地方，应该说怎样更好的使用它。
+
+##关闭Bottom Sheets的行为
+![](https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3a3Z2UGZJMkRWamM/components_bottomsheets_behavior1.png)
+![](https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3cGt6TlA0ZzNLdDg/components_bottomsheets_behavior2.png)
+![](https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3cTdiQWp2TkI0NEE/components_bottomsheets_behavior3.png)
+
+
+
+
 
 
 
