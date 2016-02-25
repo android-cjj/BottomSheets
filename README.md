@@ -124,9 +124,9 @@ onStateChanged方法可以监听到状态的改变,总共有5种
   关于我
 ---------------------
 
-Github：[Android-CJJ](https://github.com/android-cjj)------能 follow 下我就更好了 呵呵
+Github：[Android-CJJ](https://github.com/android-cjj)------能 follow 下我就更好了
 
-微博：[Android_CJJ](http://weibo.com/chenjijun2011/)-------能 关注 下我就更好了 呵呵
+微博：[Android_CJJ](http://weibo.com/chenjijun2011/)-------能 关注 下我就更好了
 
 
 
