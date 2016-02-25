@@ -81,8 +81,8 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 * STATE_COLLAPSED: 关闭Bottom Sheets,显示peekHeight的高度，默认是0
 * STATE_DRAGGING:  用户拖拽Bottom Sheets时的状态
 * STATE_SETTLING: 当Bottom Sheets view释放的状态
-* STATE_EXPANDED: 当Bottom Sheets view展开放的状态
-* STATE_HIDDEN: 当Bottom Sheets view隐藏的状态
+* STATE_EXPANDED: 当Bottom Sheets 展开的状态
+* STATE_HIDDEN: 当Bottom Sheets 隐藏的状态
 
 我也简单的写了两个demo，你可以看我源码是怎么用的
 
