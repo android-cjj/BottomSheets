@@ -68,4 +68,33 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
     }
 ```
 
+其实也挺简单的，我来解释一下。通过附加一个BottomSheetBehavior 给CoordinatorLayout的子视图，上文xml中的是NestedScrollView(addingapp:layout_behavior = " android.support.design.widget.BottomSheetBehavior”)，当然，RecyclerView也是可以的。现在你肯定有疑问了，像listView、ScrollView 这些可以吗？官方说API 21+就可以。
+
+```xml
+     app:behavior_hideable="true"
+     app:behavior_peekHeight="50dp"
+```
+这两个属性我说说，peekHeight是当Bottom Sheets关闭的时候，底部下表我们能看到的高度，hideable 是当我们拖拽下拉的时候，bottom sheet是否能全部隐藏。
+如果你需要监听Bottom Sheets回调的状态，可以通过setBottomSheetCallback来实现，onSlide方法是拖拽中的回调，根据slideOffset可以做一些动画
+onStateChanged方法可以监听到状态的改变,总共有5种
+
+* STATE_COLLAPSED: 关闭Bottom Sheets,显示peekHeight的高度，默认是0
+* STATE_DRAGGING:  用户拖拽Bottom Sheets时的状态
+* STATE_SETTLING: 当Bottom Sheets view释放的状态
+* STATE_EXPANDED: 当Bottom Sheets view展开放的状态
+* STATE_HIDDEN: 当Bottom Sheets view隐藏的状态
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
