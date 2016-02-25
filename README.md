@@ -91,11 +91,19 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 
 使用就这些了，接下来我们来讲讲改注意的地方，应该说怎样更好的使用它。
 
-##关闭Bottom Sheets的行为
+###（1）关闭Bottom Sheets的行为
 可以通过下图的形式，拖拽、点击bottom sheet之外的地方和通过‘x’按钮
+
  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3a3Z2UGZJMkRWamM/components_bottomsheets_behavior1.png" width="240" height="240" />
   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3cGt6TlA0ZzNLdDg/components_bottomsheets_behavior2.png" width="240" height="240" />
    <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3cTdiQWp2TkI0NEE/components_bottomsheets_behavior3.png" width="240" height="240" />
+   
+###（2）合适的视图设计
+
+ <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3MC0zbFNZaU1lUkk/components_bottomsheets_modal9.png" width="360" height="640" />
+  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3TnJEQUF3Y0JVb2c/components_bottomsheets_modal10.png" width="360" height="640" />
+
+
 
 
 
