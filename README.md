@@ -111,7 +111,7 @@ onStateChanged方法可以监听到状态的改变,总共有5种
   如果Bottom Sheets 展开或者上拉覆盖了ActionBar or ToolBar 这种方式也是不合适的.
   
 ###(3)尺寸的设计
-为了符合Material Design 设计，我们队尺寸有严格的要求，当然，你想随意我也阻止不了
+为了符合Material Design 设计，我们对尺寸有严格的要求，当然，你想随意我也阻止不了
 
   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3dXNVNEpIZzZQdUU/components_bottomsheets_specs1.png" width="240" height="240" />
    <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3Q3NrbGhWQXJxSGs/components_bottomsheets_specs3.png" width="240" height="240" />
