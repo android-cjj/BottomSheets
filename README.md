@@ -11,7 +11,9 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
 * 2. AppCompat DayNight theme
 * 3. Design Support Library: Bottom Sheets
 * 4. Support v4: MediaBrowserServiceCompat
-* 5. Custom Tabs
+* 5. RecyclerView
+* 6. Custom Tabs
+* 7. Leanback for Android TV
 
 具体可以上官网博客看看。
 
