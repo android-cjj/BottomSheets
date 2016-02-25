@@ -68,7 +68,7 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
     }
 ```
 
-其实也挺简单的，我来解释一下。通过附加一个BottomSheetBehavior 给CoordinatorLayout的子视图，上文xml中的是NestedScrollView(addingapp:layout_behavior = " android.support.design.widget.BottomSheetBehavior”)，当然，RecyclerView也是可以的。现在你肯定有疑问了，像listView、ScrollView 这些可以吗？官方说API 21+就可以。
+其实也挺简单的，我来解释一下。通过附加一个BottomSheetBehavior 给CoordinatorLayout的子视图，上文xml中的是NestedScrollView(adding app:layout_behavior = " android.support.design.widget.BottomSheetBehavior”)，当然，RecyclerView也是可以的。现在你肯定有疑问了，像listView、ScrollView 这些可以吗？官方说API 21+就可以。
 
 ```xml
      app:behavior_hideable="true"
@@ -83,6 +83,11 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 * STATE_SETTLING: 当Bottom Sheets view释放的状态
 * STATE_EXPANDED: 当Bottom Sheets view展开放的状态
 * STATE_HIDDEN: 当Bottom Sheets view隐藏的状态
+
+我也简单的写了两个demo，你可以看我源码是怎么用的
+
+![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif)
+![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs12.gif)
 
 
 
