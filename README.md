@@ -114,7 +114,7 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 为了符合Material Design 设计，我们队尺寸有严格的要求，当然，你想随意我也阻止不了
 
   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3dXNVNEpIZzZQdUU/components_bottomsheets_specs1.png" width="240" height="240" />
-   <img src="  https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3Q3NrbGhWQXJxSGs/components_bottomsheets_specs3.png" width="240" height="240" />
+   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3Q3NrbGhWQXJxSGs/components_bottomsheets_specs3.png" width="240" height="240" />
   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3a2JBazEtX3R2Ulk/components_bottomsheets_specs7.png" width="240" height="240" />
   
   我想说的就这些了，如果还有补充，欢迎PR!
