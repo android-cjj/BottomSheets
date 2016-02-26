@@ -70,7 +70,7 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
     }
 ```
 
-其实也挺简单的，我来解释一下。通过附加一个BottomSheetBehavior 给CoordinatorLayout的子视图，上文xml中的是NestedScrollView(adding app:layout_behavior = " android.support.design.widget.BottomSheetBehavior”)，当然，RecyclerView也是可以的。现在你肯定有疑问了，像ListView、ScrollView 这些可以吗？官方说API 21+就可以。
+其实也挺简单的，我来解释一下。通过附加一个BottomSheetBehavior 给CoordinatorLayout的子视图，上文xml中的是NestedScrollView(adding app:layout_behavior = " android.support.design.widget.BottomSheetBehavior”)，当然，RecyclerView也是可以的。
 
 ```xml
      app:behavior_hideable="true"
