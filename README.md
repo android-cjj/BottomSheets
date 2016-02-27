@@ -121,6 +121,8 @@ onStateChanged方法可以监听到状态的改变,总共有5种
   
   我想说的就这些了，如果还有补充，欢迎PR!
   
+  又写了一篇：[BottomSheets源码解析](https://github.com/android-cjj/SourceAnalysis/blob/master/README.md)
+  
 
   
   关于我
