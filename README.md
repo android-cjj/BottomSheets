@@ -87,9 +87,9 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 * STATE_HIDDEN: 当Bottom Sheets 隐藏的状态
 
 我也简单的写了BottomSheetBehavior和BottomSheetDialog的demo，你可以看我源码是怎么用的
+ <img src="https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif" width="240" height="360" />
 
-![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif)
-![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fdialog.gif)
+ <img src="https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif" width="240" height="360" />
 
 使用就这些了，接下来我们来讲讲该注意的地方，应该说怎样更好的使用它。
 
