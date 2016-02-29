@@ -59,7 +59,7 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
         behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                //这里是bottomSheet 状态的改变，根据slideOffset可以做一些动画
+                //这里是bottomSheet 状态的改变回调
             }
 
             @Override
