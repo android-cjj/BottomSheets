@@ -1,6 +1,6 @@
 BottomSheets
 =======================
-Android Support Library 23.2里的 Design Support Library新加了一个Bottom Sheets控件，一个底部表，就是我们经常在分享或者地图等app看到的效果
+Android Support Library 23.2里的 Design Support Library新加了一个Bottom Sheets控件，一个底部表，就是我们经常在分享或者地图、音乐等app看到的效果
 
  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3VW9HUDhtTE5XZVk/components_bottomsheets_usage2.png" width="360" height="640" />
  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3dDZKN1lHNG1TekU/components_bottomsheets_usage1.png" width="360" height="640" />
@@ -11,7 +11,9 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
 * 2. AppCompat DayNight theme
 * 3. Design Support Library: Bottom Sheets
 * 4. Support v4: MediaBrowserServiceCompat
-* 5. Custom Tabs
+* 5. RecyclerView
+* 6. Custom Tabs
+* 7. Leanback for Android TV
 
 具体可以上官网博客看看。
 
@@ -68,7 +70,7 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
     }
 ```
 
-其实也挺简单的，我来解释一下。通过附加一个BottomSheetBehavior 给CoordinatorLayout的子视图，上文xml中的是NestedScrollView(addingapp:layout_behavior = " android.support.design.widget.BottomSheetBehavior”)，当然，RecyclerView也是可以的。现在你肯定有疑问了，像listView、ScrollView 这些可以吗？官方说API 21+就可以。
+其实也挺简单的，我来解释一下。通过附加一个BottomSheetBehavior 给CoordinatorLayout的子视图，上文xml中的是NestedScrollView(adding app:layout_behavior = " android.support.design.widget.BottomSheetBehavior”)，当然，RecyclerView也是可以的。
 
 ```xml
      app:behavior_hideable="true"
@@ -80,9 +82,96 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 
 * STATE_COLLAPSED: 关闭Bottom Sheets,显示peekHeight的高度，默认是0
 * STATE_DRAGGING:  用户拖拽Bottom Sheets时的状态
-* STATE_SETTLING: 当Bottom Sheets view释放的状态
-* STATE_EXPANDED: 当Bottom Sheets view展开放的状态
-* STATE_HIDDEN: 当Bottom Sheets view隐藏的状态
+* STATE_SETTLING: 当Bottom Sheets view释放时记录的状态。
+* STATE_EXPANDED: 当Bottom Sheets 展开的状态
+* STATE_HIDDEN: 当Bottom Sheets 隐藏的状态
+
+我也简单的写了两个demo，你可以看我源码是怎么用的
+
+![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif)
+![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs12.gif)
+
+使用就这些了，接下来我们来讲讲该注意的地方，应该说怎样更好的使用它。
+
+###（1）关闭Bottom Sheets的行为
+可以通过下图的形式，拖拽、点击bottom sheet之外的地方和通过‘x’按钮
+
+ <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3a3Z2UGZJMkRWamM/components_bottomsheets_behavior1.png" width="240" height="240" />
+  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3cGt6TlA0ZzNLdDg/components_bottomsheets_behavior2.png" width="240" height="240" />
+   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3cTdiQWp2TkI0NEE/components_bottomsheets_behavior3.png" width="240" height="240" />
+   
+###（2）合适的视图设计
+
+ <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3MC0zbFNZaU1lUkk/components_bottomsheets_modal9.png" width="360" height="640" />
+  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3TnJEQUF3Y0JVb2c/components_bottomsheets_modal10.png" width="360" height="640" />
+  
+ 上图你可明显的看到第二幅这种设计是不合适的，空白太多，不美观，对吧！
+ 
+  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3Ym9QLTlfbUR4ekk/components_bottomsheets_modal11.png" width="360" height="640" />
+  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3YmVmTWVhMWtZbFk/components_bottomsheets_modal12.png" width="360" height="640" />
+  
+  如果Bottom Sheets 展开或者上拉覆盖了ActionBar or ToolBar 这种方式也是不合适的.
+  
+###(3)尺寸的设计
+为了符合Material Design 设计，我们对尺寸有严格的要求，当然，你想随意我也阻止不了
+
+  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3dXNVNEpIZzZQdUU/components_bottomsheets_specs1.png" width="240" height="240" />
+   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3Q3NrbGhWQXJxSGs/components_bottomsheets_specs3.png" width="240" height="240" />
+  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3a2JBazEtX3R2Ulk/components_bottomsheets_specs7.png" width="240" height="240" />
+  
+  我想说的就这些了，如果还有补充，欢迎PR!
+  
+  又写了一篇：[BottomSheets源码解析](https://github.com/android-cjj/SourceAnalysis/blob/master/README.md)
+  
+
+  
+  关于我
+---------------------
+
+Github：[Android-CJJ](https://github.com/android-cjj)------能 follow 下我就更好了
+
+微博：[Android_CJJ](http://weibo.com/chenjijun2011/)-------能 关注 下我就更好了
+
+
+
+  License
+=======
+
+    The MIT License (MIT)
+
+	Copyright (c) 2015 android-cjj
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all
+	copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+	SOFTWARE.
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
 
 
 
