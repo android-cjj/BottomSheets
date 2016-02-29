@@ -88,8 +88,8 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 
 我也简单的写了BottomSheetBehavior和BottomSheetDialog的demo，你可以看我源码是怎么用的
  <img src="https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif" width="240" height="360" />
-
- <img src="https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif" width="240" height="360" />
+ <img src="https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fdialog.gif" width="240" height="360" />
+ <img src="https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs12.gif" width="240" height="360" />
 
 使用就这些了，接下来我们来讲讲该注意的地方，应该说怎样更好的使用它。
 
