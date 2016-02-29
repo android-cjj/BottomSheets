@@ -86,7 +86,7 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 * STATE_EXPANDED: 当Bottom Sheets 展开的状态
 * STATE_HIDDEN: 当Bottom Sheets 隐藏的状态
 
-我也简单的写了BottomSheetBehavior和BottomSheetDialg及RecyclerView的demo，你可以看我源码是怎么用的
+我也简单的写了BottomSheetBehavior和BottomSheetDialog的demo，你可以看我源码是怎么用的
 
 ![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif)
 ![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fdialog.gif)
