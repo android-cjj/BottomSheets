@@ -1,6 +1,7 @@
 package com.cjj.buttomsheetdemo;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,6 +18,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,6 +30,9 @@ import java.util.Random;
  */
 public class RecyclerViewActivity extends AppCompatActivity {
 
+    public BottomSheetBehavior behavior;
+    public RecyclerView recyclerView;
+    public View blackView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,36 +40,51 @@ public class RecyclerViewActivity extends AppCompatActivity {
         setContentView(R.layout.acitivity_rv);
         // The View with the BottomSheetBehavior
         CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.cl);
-        RecyclerView bottomSheet = (RecyclerView) coordinatorLayout.findViewById(R.id.recyclerview);
-        setupRecyclerView(bottomSheet);
-        final BottomSheetBehavior behavior = BottomSheetBehavior.from(bottomSheet);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
+        SimpleStringRecyclerViewAdapter simpleStringRecyclerViewAdapter = new SimpleStringRecyclerViewAdapter(this);
+
+        simpleStringRecyclerViewAdapter.setItemClickListener(new SimpleStringRecyclerViewAdapter.ItemClickListener() {
+            @Override
+            public void onItemClick(int pos) {
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                Toast.makeText(RecyclerViewActivity.this, "pos--->" + pos, Toast.LENGTH_LONG).show();
+            }
+        });
+        recyclerView.setAdapter(simpleStringRecyclerViewAdapter);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        behavior = BottomSheetBehavior.from(recyclerView);
         behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                // React to state change
-                Log.i("aabb", "newState--->" + newState);
-
+                if(newState == BottomSheetBehavior.STATE_COLLAPSED||newState == BottomSheetBehavior.STATE_HIDDEN){
+//                    blackView.setBackgroundColor(Color.TRANSPARENT);
+                    blackView.setVisibility(View.GONE);
+                }
             }
 
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
                 // React to dragging events
-                Log.i("aabb", "slideOffset=====》" + slideOffset);
-
-                ViewCompat.setScaleX(bottomSheet, slideOffset);
-                ViewCompat.setScaleY(bottomSheet, slideOffset);
-
+                blackView.setVisibility(View.VISIBLE);
+                ViewCompat.setAlpha(blackView,slideOffset);
             }
         });
 
         findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (behavior.getState() == BottomSheetBehavior.STATE_COLLAPSED) {
                     behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-                } else {
-                    behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                }
+            }
+        });
+
+        blackView = findViewById(R.id.blackview);
+        blackView.setBackgroundColor(Color.parseColor("#60000000"));
+        blackView.setVisibility(View.GONE);
+        blackView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
             }
         });
 
@@ -78,11 +98,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         return true;
     }
 
-    private void setupRecyclerView(RecyclerView recyclerView) {
-        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        recyclerView.setAdapter(new SimpleStringRecyclerViewAdapter(RecyclerViewActivity.this));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-    }
+
 
     private List<String> getRandomSublist(String[] array, int amount) {
         ArrayList<String> list = new ArrayList<>(amount);
@@ -96,15 +112,27 @@ public class RecyclerViewActivity extends AppCompatActivity {
     public static class SimpleStringRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleStringRecyclerViewAdapter.ViewHolder> {
 
+        public ItemClickListener mItemClickListener;
+
+        public void setItemClickListener(ItemClickListener listener) {
+            mItemClickListener = listener;
+        }
+
+        public interface ItemClickListener {
+            public void onItemClick(int pos);
+        }
+
         private Context mContext;
 
         public static class ViewHolder extends RecyclerView.ViewHolder {
 
             public final ImageView mImageView;
+            public final TextView mTextView;
 
             public ViewHolder(View view) {
                 super(view);
                 mImageView = (ImageView) view.findViewById(R.id.avatar);
+                mTextView = (TextView) view.findViewById(R.id.tv);
             }
 
 
@@ -124,19 +152,27 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(final ViewHolder holder, final int position) {
-            if (position == 0) {
-                holder.mImageView.setImageResource(R.drawable.a6);
-            } else if (position == 1) {
-                holder.mImageView.setImageResource(R.drawable.a5);
-            }
+//            if (position == 0) {
+//                holder.mImageView.setImageResource(R.drawable.a6);
+//            } else if (position == 1) {
+//                holder.mImageView.setImageResource(R.drawable.a5);
+//            }
+//
+//            holder.mImageView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+////                    Toast.makeText(mContext, "pos --->" + position, Toast.LENGTH_SHORT).show();
+//                    mItemClickListener.onItemClick(position);
+//                }
+//            });
 
-            holder.mImageView.setOnClickListener(new View.OnClickListener() {
+            holder.mTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mContext, "pos --->" + position, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(mContext, "pos --->" + position, Toast.LENGTH_SHORT).show();
+                    mItemClickListener.onItemClick(position);
                 }
             });
-
         }
 
         @Override

@@ -27,5 +27,15 @@
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:visibility="gone"
       />
+
+    <TextView
+        android:text="Item"
+        android:id="@+id/tv"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </android.support.v7.widget.CardView>

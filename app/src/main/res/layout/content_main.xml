@@ -30,6 +30,14 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"/>
 
-
+    <Button
+        android:id="@+id/bs_dialog"
+        android:text="bottom_sheet_dialog"
+        android:layout_below="@+id/rv"
+        android:layout_marginTop="20dp"
+        android:background="#ff2020"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
 
 </RelativeLayout>
