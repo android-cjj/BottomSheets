@@ -59,7 +59,7 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
         behavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                //这里是bottomSheet 状态的改变，根据slideOffset可以做一些动画
+                //这里是bottomSheet 状态的改变回调
             }
 
             @Override
@@ -70,7 +70,7 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
     }
 ```
 
-其实也挺简单的，我来解释一下。通过附加一个BottomSheetBehavior 给CoordinatorLayout的子视图，上文xml中的是NestedScrollView(adding app:layout_behavior = " android.support.design.widget.BottomSheetBehavior”)，当然，RecyclerView也是可以的。
+其实也挺简单的，我来解释一下。通过附加一个BottomSheetBehavior 给CoordinatorLayout的子视图，上文xml中的是NestedScrollView(adding app:layout_behavior = " android.support.design.widget.BottomSheetBehavior”)，当然，RecyclerView也是可以的。如果需要BottomSheet View可以保持滚动，需要支持 nested scrolling (例如: NestedScrollView, RecyclerView, or ListView/ScrollView on API 21+).
 
 ```xml
      app:behavior_hideable="true"
@@ -82,14 +82,14 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 
 * STATE_COLLAPSED: 关闭Bottom Sheets,显示peekHeight的高度，默认是0
 * STATE_DRAGGING:  用户拖拽Bottom Sheets时的状态
-* STATE_SETTLING: 当Bottom Sheets view释放时记录的状态。
+* STATE_SETTLING: 当Bottom Sheets view摆放时的状态。
 * STATE_EXPANDED: 当Bottom Sheets 展开的状态
 * STATE_HIDDEN: 当Bottom Sheets 隐藏的状态
 
-我也简单的写了两个demo，你可以看我源码是怎么用的
+我也简单的写了BottomSheetBehavior和BottomSheetDialog的demo，你可以看我源码是怎么用的
 
 ![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs1.gif)
-![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fbs12.gif)
+![](https://github.com/android-cjj/BottomSheets/blob/master/gif%2Fdialog.gif)
 
 使用就这些了，接下来我们来讲讲该注意的地方，应该说怎样更好的使用它。
 
