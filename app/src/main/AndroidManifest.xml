@@ -22,6 +22,7 @@
         <activity android:name=".RecyclerViewActivity"/>
         <activity android:name=".NestedScrollViewActivity"/>
         <activity android:name=".BottomSheetDialogActivity"/>
+        <activity android:name=".BeautifulBottomSheetActivity"/>
     </application>
 
 </manifest>

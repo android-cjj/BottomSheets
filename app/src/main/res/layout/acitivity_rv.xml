@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:background="#fff"
         app:behavior_hideable="false"
+        app:behavior_peekHeight="10dp"
         app:layout_behavior="@string/bottom_sheet_behavior"
         />
 
