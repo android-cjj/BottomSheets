@@ -132,6 +132,8 @@ Github：[Android-CJJ](https://github.com/android-cjj)------能 follow 下我就
 
 微博：[Android_CJJ](http://weibo.com/chenjijun2011/)-------能 关注 下我就更好了
 
+GitHub小伙伴交流群'' 477826523,很难进的哦！
+
 
 
   License
