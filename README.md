@@ -1,6 +1,6 @@
 BottomSheets
 =======================
-如果使用上遇到坑，可以GitHub小伙伴交流群''' 477826523 帮你搞定一切bug...
+如果使用上遇到坑，点击链接加入群【GitHub小伙伴交流群'''】：http://jq.qq.com/?_wv=1027&k=27lxYHB''' ,群号：477826523 帮你搞定一切bug...
 
 Android Support Library 23.2里的 Design Support Library新加了一个Bottom Sheets控件，一个底部表，就是我们经常在分享或者地图、音乐等app看到的效果
 
