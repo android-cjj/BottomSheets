@@ -1,5 +1,7 @@
 BottomSheets
 =======================
+如果使用上遇到坑，可以GitHub小伙伴交流群''' 477826523 帮你搞定一切bug...
+
 Android Support Library 23.2里的 Design Support Library新加了一个Bottom Sheets控件，一个底部表，就是我们经常在分享或者地图、音乐等app看到的效果
 
  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3VW9HUDhtTE5XZVk/components_bottomsheets_usage2.png" width="360" height="640" />
