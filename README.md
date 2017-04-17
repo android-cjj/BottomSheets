@@ -21,8 +21,8 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
 
 这篇文章我给大家说说BottomSheetBehavior的使用及注意的地方
 
-##Usage
-###(1)在布局文件xml中
+## Usage
+### (1)在布局文件xml中
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout
@@ -47,7 +47,7 @@ Android Support Library 23.2里的 Design Support Library新加了一个Bottom S
 </android.support.design.widget.CoordinatorLayout>
 
 ```
-###(2)在java代码中
+### (2)在java代码中
 ```java
   @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,14 +95,14 @@ onStateChanged方法可以监听到状态的改变,总共有5种
 
 使用就这些了，接下来我们来讲讲该注意的地方，应该说怎样更好的使用它。
 
-###（1）关闭Bottom Sheets的行为
+### （1）关闭Bottom Sheets的行为
 可以通过下图的形式，拖拽、点击bottom sheet之外的地方和通过‘x’按钮
 
  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3a3Z2UGZJMkRWamM/components_bottomsheets_behavior1.png" width="240" height="240" />
   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3cGt6TlA0ZzNLdDg/components_bottomsheets_behavior2.png" width="240" height="240" />
    <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3cTdiQWp2TkI0NEE/components_bottomsheets_behavior3.png" width="240" height="240" />
    
-###（2）合适的视图设计
+### （2）合适的视图设计
 
  <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3MC0zbFNZaU1lUkk/components_bottomsheets_modal9.png" width="360" height="640" />
   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3TnJEQUF3Y0JVb2c/components_bottomsheets_modal10.png" width="360" height="640" />
@@ -114,7 +114,7 @@ onStateChanged方法可以监听到状态的改变,总共有5种
   
   如果Bottom Sheets 展开或者上拉覆盖了ActionBar or ToolBar 这种方式也是不合适的.
   
-###(3)尺寸的设计
+### (3)尺寸的设计
 为了符合Material Design 设计，我们对尺寸有严格的要求，当然，你想随意我也阻止不了
 
   <img src="https://material-design.storage.googleapis.com/publish/material_v_4/material_ext_publish/0Bzhp5Z4wHba3dXNVNEpIZzZQdUU/components_bottomsheets_specs1.png" width="240" height="240" />
